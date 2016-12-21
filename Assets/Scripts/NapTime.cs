@@ -13,14 +13,14 @@ public class NapTime : MonoBehaviour {
 
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnGUI()
     {
-
+        GUI.Label(new Rect(10, 10, 200, 20), "Banana");
     }
 
     void OnTriggerEnter2D()
     {
+        GUI.Label(new Rect(10, 10, 200, 20), "Banana");
         PlayerStats.ChangeMotivation(MotivationToAdd);
         PlayerStats.ChangeTime(Time);
     }
