@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DojoGame.Plugins", "DojoGame.Plugins.csproj", "{918EE5CB-CFF4-7C9C-3ADE-ED036A3E4955}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DojoGame", "DojoGame.csproj", "{712447B4-F1B5-B151-BF67-44BA944CBB32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DojoGame.Editor", "DojoGame.Editor.csproj", "{BA4E2CC6-3912-BAD2-37FB-2C8D5FB6621F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{918EE5CB-CFF4-7C9C-3ADE-ED036A3E4955}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{918EE5CB-CFF4-7C9C-3ADE-ED036A3E4955}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{918EE5CB-CFF4-7C9C-3ADE-ED036A3E4955}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{918EE5CB-CFF4-7C9C-3ADE-ED036A3E4955}.Release|Any CPU.Build.0 = Release|Any CPU
+		{712447B4-F1B5-B151-BF67-44BA944CBB32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{712447B4-F1B5-B151-BF67-44BA944CBB32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{712447B4-F1B5-B151-BF67-44BA944CBB32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{712447B4-F1B5-B151-BF67-44BA944CBB32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA4E2CC6-3912-BAD2-37FB-2C8D5FB6621F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA4E2CC6-3912-BAD2-37FB-2C8D5FB6621F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA4E2CC6-3912-BAD2-37FB-2C8D5FB6621F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA4E2CC6-3912-BAD2-37FB-2C8D5FB6621F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
