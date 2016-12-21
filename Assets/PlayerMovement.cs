@@ -30,8 +30,6 @@ public class PlayerMovement : MonoBehaviour {
 		{
 			anim.SetBool("iswalking", false);
 		}
-		Debug.Log(movement_vector);
-		Debug.Log(rBody.position);
 		// rBody.velocity = movement_vector * Time.deltaTime * 10;
 		// transform.position += movement_vector * Time.deltaTime;
 		rBody.MovePosition(rBody.position + (movement_vector * Time.deltaTime));
