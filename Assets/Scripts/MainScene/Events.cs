@@ -1,0 +1,46 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Events : MonoBehaviour {
+	public int algo;
+	public int plat;
+	public int proj;
+	public int mot;
+	void Awake()
+	{
+		PlayerEvents.shesaidYes += SwitchCase;
+	}
+
+	void SwitchCase(string tag, int timeUsed)
+	{
+		Debug.Log (tag);
+		Debug.Log (timeUsed.ToString());
+		switch (tag) {
+		case "whiteboard":
+			PlayerStats.ChangeAlgorithms (algo);
+			break;
+
+		case "platform":
+			PlayerStats.ChangePlatform (plat);
+			break;
+
+		case "NapTimewifSal":
+			PlayerStats.ChangeMotivation (mot);
+			break;
+
+		case "project":
+			PlayerStats.AddToProject (proj);
+			break;
+
+		default:
+			break;
+		}
+		PlayerStats.ChangeTime (timeUsed);
+
+	}
+		
+
+
+		
+}

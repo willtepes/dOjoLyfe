@@ -14,7 +14,7 @@ public class HudScript : MonoBehaviour {
 	{
 		Motivation.text = "Motivation: " + PlayerStats.Motivation.ToString();
 		CodingSkill.text = "Coding Skill: " + PlayerStats.CodingSkill.ToString();
-		ProjectCompletion.text = "Project Completion: " + PlayerStats.ProjectCompletion.ToString();
+		ProjectCompletion.text = "Project Completion: " + PlayerStats.ProjectCompletion.ToString() + "%";
         TimeLeft.text = "TimeLeft: " + PlayerStats.TimeLeft.ToString();
 	}
 	

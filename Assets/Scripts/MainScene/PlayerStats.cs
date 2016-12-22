@@ -15,6 +15,8 @@ public class PlayerStats : MonoBehaviour {
 	static public int ProjectCompletion;
 
     static public int TimeLeft;
+	static public double finalScore;
+
 
 	// Use this for initialization
 	void Awake () {
@@ -59,7 +61,20 @@ public class PlayerStats : MonoBehaviour {
 
     public static void ChangeTime(int Time)
     {
+		int bonus = 1;
         TimeLeft -= Time;
-        PlatformEvent.UpdateUI();
+		if (TimeLeft <= 0) {
+			if (ProjectCompletion >= 100) {
+				bonus = 2;
+			}
+			finalScore = (((Algorithms * 6) * (PlatformSkill * 2.5)) * bonus);
+			//DontDestroyOnLoad (finalScore);
+			
+			Application.LoadLevel (2);
+		}
+		else
+		{
+			PlatformEvent.UpdateUI ();
+		}
     }
 }
