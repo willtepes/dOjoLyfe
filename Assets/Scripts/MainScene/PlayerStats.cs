@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour {
 
-	static public int Motivation;
+	static public double Motivation;
 
-	static public int CodingSkill;
+	static public double CodingSkill;
 
-	static public int Algorithms;
+	static public double Algorithms;
 
-	static public int PlatformSkill;
+	static public double PlatformSkill;
 
-	static public int ProjectCompletion;
+	static public double ProjectCompletion;
 
-    static public int TimeLeft;
+    static public double TimeLeft;
+
 	static public double finalScore;
 
-
-	// Use this for initialization
-	void Awake () {
+    // Use this for initialization
+    void Awake () {
 		Motivation = 10;
 		Algorithms = 0;
 		PlatformSkill = 0;
@@ -32,26 +32,67 @@ public class PlayerStats : MonoBehaviour {
 	void Update () {
 		
 	}
-    public static void ChangeMotivation(int MotivationValue)
+    public static void ChangeMotivation(double MotivationValue)
     {
-        Motivation += MotivationValue;
+        double Banana = Random.Range(1, 11);
+        if (Banana <=5)
+        {
+            Motivation += MotivationValue;
+        }
+        else
+        {
+            Motivation += (MotivationValue * 2);
+        }
     }
 
-    public static void ChangeAlgorithms(int AlgorithmValue)
+    public static void ChangeAlgorithms(double AlgorithmValue)
     {
-        Algorithms += AlgorithmValue;
+        if(Motivation > 100)
+        {
+            Algorithms += (AlgorithmValue * 2);
+        }
+        else if(Motivation > 50)
+        {
+            Algorithms += (AlgorithmValue * 1.5);
+        }
+        else
+        {
+            Algorithms += AlgorithmValue;
+        }
         ChangeCoding();
     }
 
-    public static void ChangePlatform(int PlatformValue)
+    public static void ChangePlatform(double PlatformValue)
     {
-        PlatformSkill += PlatformValue;
+        if (Motivation > 110)
+        {
+            Algorithms += (PlatformValue * 2);
+        }
+        else if (Motivation > 70)
+        {
+            Algorithms += (PlatformValue * 1.5);
+        }
+        else
+        {
+            Algorithms += PlatformValue;
+        }
         ChangeCoding();
     }
 
-    public static void AddToProject(int ProjectValue)
+    public static void AddToProject(double ProjectValue)
     {
-        ProjectCompletion += ProjectValue;
+        if (Motivation > 120)
+        {
+            ProjectCompletion += (ProjectValue * 2);
+        }
+        else if (Motivation > 60)
+        {
+            ProjectCompletion += (ProjectValue * 1.5);
+        }
+        else
+        {
+            ProjectCompletion += ProjectValue;
+        }
     }
 
     public static void ChangeCoding()
@@ -59,15 +100,15 @@ public class PlayerStats : MonoBehaviour {
         CodingSkill = (Algorithms + PlatformSkill) / 2;
     }
 
-    public static void ChangeTime(int Time)
+    public static void ChangeTime(double Time)
     {
-		int bonus = 1;
+        double bonus = 1;
         TimeLeft -= Time;
 		if (TimeLeft <= 0) {
 			if (ProjectCompletion >= 100) {
 				bonus = 2;
 			}
-			finalScore = (((Algorithms * 6) * (PlatformSkill * 2.5)) * bonus);
+			finalScore = (double) (((Algorithms * 6) * (PlatformSkill * 2.5)) * bonus);
 			//DontDestroyOnLoad (finalScore);
 			
 			Application.LoadLevel (2);
@@ -78,3 +119,4 @@ public class PlayerStats : MonoBehaviour {
 		}
     }
 }
+    
