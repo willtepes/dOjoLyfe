@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\MainScene\PlayerEvents.cs" />
      <Compile Include="Assets\Scripts\MainScene\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\MainScene\PlayerStats.cs" />
+     <Compile Include="Assets\Scripts\endGame\showScore.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\ImportBehaviour.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SpriteDepthInMap.cs" />

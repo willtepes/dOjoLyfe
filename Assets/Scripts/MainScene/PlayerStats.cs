@@ -15,7 +15,8 @@ public class PlayerStats : MonoBehaviour {
 	static public int ProjectCompletion;
 
     static public int TimeLeft;
-	static public double finalScore;
+	static public double finalScore=0;
+
 
 
 	// Use this for initialization
@@ -26,6 +27,7 @@ public class PlayerStats : MonoBehaviour {
 		ProjectCompletion = 0;
         TimeLeft = 100;
         ChangeCoding();
+		DontDestroyOnLoad(transform.gameObject);
 	}
 	
 	// Update is called once per frame
@@ -68,7 +70,7 @@ public class PlayerStats : MonoBehaviour {
 				bonus = 2;
 			}
 			finalScore = (((Algorithms * 6) * (PlatformSkill * 2.5)) * bonus);
-			//DontDestroyOnLoad (finalScore);
+
 			
 			Application.LoadLevel (2);
 		}
