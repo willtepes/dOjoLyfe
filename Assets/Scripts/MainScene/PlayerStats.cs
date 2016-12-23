@@ -111,6 +111,9 @@ public class PlayerStats : MonoBehaviour {
 				bonus = 2;
 			}
 			finalScore = (double) ((((Algorithms * 6)+1) * ((PlatformSkill * 2.5)+1)) * bonus);
+			GameObject Hud =GameObject.Find("Hud");
+			Hud.SetActive (false);
+
 			
 			Application.LoadLevel (2);
 		}

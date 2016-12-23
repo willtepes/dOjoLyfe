@@ -23,6 +23,7 @@ public class HudScript : MonoBehaviour {
 	void Awake () {
         RenderUI();
         PlatformEvent.dotheUpdateUI += RenderUI;
+		gameObject.SetActive (true);
 		DontDestroyOnLoad (transform.gameObject);
 	}
 	
