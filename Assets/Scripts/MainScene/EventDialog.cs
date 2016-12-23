@@ -30,16 +30,16 @@ public class EventDialog : MonoBehaviour {
 
 		switch (tag) {
 		case "whiteboard":
-			dialog.text = "Wanna Do some Algorithms???";
+			dialog.text = "Is it time for ALGORITHMS?!?!";
 			break;
 		case "platform":
-			dialog.text = "Wanna work on the plaform???";
+			dialog.text = "Platform time?";
 			break;
 		case "project":
-			dialog.text = "Do Your Project???!!!?";
+			dialog.text = "How about working on that project?";
 			break;
 		case "NapTimewifSal":
-			dialog.text = "Sal will be little spoon???";
+			dialog.text = "Do you want to take a nap?";
 			break;
 		default:
 			break;
