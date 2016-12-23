@@ -14,9 +14,11 @@ public class PlayerStats : MonoBehaviour {
 
 	static public double ProjectCompletion;
 
+
     static public double TimeLeft;
 
-	static public double finalScore;
+	static public double finalScore=0;
+
 
     // Use this for initialization
     void Awake () {
@@ -26,6 +28,7 @@ public class PlayerStats : MonoBehaviour {
 		ProjectCompletion = 0;
         TimeLeft = 100;
         ChangeCoding();
+		DontDestroyOnLoad(transform.gameObject);
 	}
 	
 	// Update is called once per frame
@@ -109,7 +112,6 @@ public class PlayerStats : MonoBehaviour {
 				bonus = 2;
 			}
 			finalScore = (double) (((Algorithms * 6) * (PlatformSkill * 2.5)) * bonus);
-			//DontDestroyOnLoad (finalScore);
 			
 			Application.LoadLevel (2);
 		}
