@@ -41,6 +41,15 @@ public class EventDialog : MonoBehaviour {
 		case "NapTimewifSal":
 			dialog.text = "Do you want to take a nap?";
 			break;
+        case "CodeReview":
+            dialog.text = "Do you want to review your code?";
+            break;
+        case "HackerRank":
+            dialog.text = "Work on algorithms online?";
+            break;
+        case "ParseStone":
+            dialog.text = "Play some ParseStone? Gotta rank up!";
+            break;
 		default:
 			break;
 		

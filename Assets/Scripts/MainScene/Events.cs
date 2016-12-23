@@ -33,6 +33,15 @@ public class Events : MonoBehaviour {
 			PlayerStats.AddToProject (proj);
 			break;
 
+        case "CodeReview":
+            PlayerStats.CodeReview (plat);
+            break;
+        case "HackerRank":
+             PlayerStats.HackerRank(algo);
+             break;
+        case "ParseStone":
+             PlayerStats.ParseStone(mot);
+             break;
 		default:
 			break;
 		}

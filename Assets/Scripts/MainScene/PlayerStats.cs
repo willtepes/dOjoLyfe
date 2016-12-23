@@ -18,7 +18,6 @@ public class PlayerStats : MonoBehaviour {
 
 	static public double finalScore;
 
-
     // Use this for initialization
     void Awake () {
 		Motivation = 10;
@@ -34,6 +33,7 @@ public class PlayerStats : MonoBehaviour {
 	void Update () {
 		
 	}
+
     public static void ChangeMotivation(double MotivationValue)
     {
         double Banana = Random.Range(1, 11);
@@ -61,6 +61,11 @@ public class PlayerStats : MonoBehaviour {
         {
             Algorithms += AlgorithmValue;
         }
+        if(TimeLeft > 66)
+        {
+            Algorithms += 3;
+        }
+        Motivation -= 3;
         ChangeCoding();
     }
 
@@ -78,6 +83,11 @@ public class PlayerStats : MonoBehaviour {
         {
 			PlatformSkill += PlatformValue;
         }
+        if (TimeLeft > 33 && TimeLeft < 66)
+        {
+            PlatformSkill += 5;
+        }
+        Motivation -= 3;
         ChangeCoding();
     }
 
@@ -95,11 +105,65 @@ public class PlayerStats : MonoBehaviour {
         {
             ProjectCompletion += ProjectValue;
         }
+        if (TimeLeft < 33)
+        {
+            ProjectCompletion += 5;
+        }
+        Motivation -= 3;
     }
 
     public static void ChangeCoding()
     {
         CodingSkill = (Algorithms + PlatformSkill) / 2;
+    }
+
+    public static void CodeReview(double PlatformValue)
+    {
+        if (Motivation > 60)
+        {
+            PlatformSkill += (PlatformValue * 1.5);
+        }
+        else if (Motivation > 40)
+        {
+            PlatformSkill += (PlatformValue * 1);
+        }
+        else
+        {
+            PlatformSkill += (PlatformValue *.5);
+        }
+        if (TimeLeft > 33 && TimeLeft < 66)
+        {
+            PlatformSkill += 5;
+        }
+        Motivation -= 3;
+        ChangeCoding();
+    }
+
+    public static void ParseStone(double MotivationValue)
+    {
+        Motivation -= 5;
+    }
+
+    public static void HackerRank(double AlgorithmValue)
+    {
+        if (Motivation > 80)
+        {
+            Algorithms += (AlgorithmValue * 2);
+        }
+        else if (Motivation > 40)
+        {
+            Algorithms += (AlgorithmValue * 1.5);
+        }
+        else
+        {
+            Algorithms += AlgorithmValue;
+        }
+        if (TimeLeft > 66)
+        {
+            Algorithms += 3;
+        }
+        Motivation -= 3;
+        ChangeCoding();
     }
 
     public static void ChangeTime(double Time)
