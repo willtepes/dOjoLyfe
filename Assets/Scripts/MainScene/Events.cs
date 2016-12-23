@@ -12,10 +12,6 @@ public class Events : MonoBehaviour {
 		PlayerEvents.shesaidYes += SwitchCase;
 	}
 
-	void OnDestroy()
-	{
-		PlayerEvents.shesaidYes -= SwitchCase;	
-	}
 	void SwitchCase(string tag, int timeUsed)
 	{
 		Debug.Log (tag);
@@ -37,14 +33,23 @@ public class Events : MonoBehaviour {
 			PlayerStats.AddToProject (proj);
 			break;
 
+		case "CodeReview":
+			PlayerStats.CodeReview (plat);
+			break;
+		case "HackerRank":
+			PlayerStats.HackerRank(algo);
+			break;
+		case "ParseStone":
+			PlayerStats.ParseStone(mot);
+			break;
 		default:
 			break;
 		}
 		PlayerStats.ChangeTime (timeUsed);
 
 	}
-		
 
 
-		
+
+
 }
