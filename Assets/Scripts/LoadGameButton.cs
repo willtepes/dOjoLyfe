@@ -10,6 +10,11 @@ public class LoadGameButton : MonoBehaviour {
 	{
 		gameObject.AddComponent<AudioSource> ();
 		source.clip = sound;
+	}	
+	void Update () {
+		if(Input.GetKeyDown("escape")) {//When a key is pressed down it see if it was the escape key if it was it will execute the code
+			Application.Quit(); // Quits the game
+		}
 	}
 	public void startGame()
 	{

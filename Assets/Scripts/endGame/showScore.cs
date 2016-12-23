@@ -16,10 +16,12 @@ public class showScore : MonoBehaviour {
 		possibleJobs (percent);
 		dialog.text = $"Congratulations your score is {percent}% You can get a job at {job}";
 
-
-
 	}
-	
+	void Update () {
+		if(Input.GetKeyDown("escape")) {//When a key is pressed down it see if it was the escape key if it was it will execute the code
+			Application.Quit(); // Quits the game
+		}
+	}
 
 	public void PlayAgain(){
 		Application.LoadLevel (0);

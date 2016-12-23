@@ -12,6 +12,10 @@ public class Events : MonoBehaviour {
 		PlayerEvents.shesaidYes += SwitchCase;
 	}
 
+	void OnDestroy()
+	{
+		PlayerEvents.shesaidYes -= SwitchCase;	
+	}
 	void SwitchCase(string tag, int timeUsed)
 	{
 		Debug.Log (tag);
