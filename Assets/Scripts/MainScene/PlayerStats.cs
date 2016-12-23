@@ -14,10 +14,9 @@ public class PlayerStats : MonoBehaviour {
 
 	static public double ProjectCompletion;
 
-
     static public double TimeLeft;
 
-	static public double finalScore=0;
+	static public double finalScore;
 
 
     // Use this for initialization
@@ -28,7 +27,7 @@ public class PlayerStats : MonoBehaviour {
 		ProjectCompletion = 0;
         TimeLeft = 100;
         ChangeCoding();
-		DontDestroyOnLoad(transform.gameObject);
+		DontDestroyOnLoad (transform.gameObject);
 	}
 	
 	// Update is called once per frame
@@ -69,15 +68,15 @@ public class PlayerStats : MonoBehaviour {
     {
         if (Motivation > 110)
         {
-            Algorithms += (PlatformValue * 2);
+            PlatformSkill += (PlatformValue * 2);
         }
         else if (Motivation > 70)
         {
-            Algorithms += (PlatformValue * 1.5);
+            PlatformSkill += (PlatformValue * 1.5);
         }
         else
         {
-            Algorithms += PlatformValue;
+			PlatformSkill += PlatformValue;
         }
         ChangeCoding();
     }
@@ -105,13 +104,13 @@ public class PlayerStats : MonoBehaviour {
 
     public static void ChangeTime(double Time)
     {
-        double bonus = 1;
+        int bonus = 1;
         TimeLeft -= Time;
 		if (TimeLeft <= 0) {
 			if (ProjectCompletion >= 100) {
 				bonus = 2;
 			}
-			finalScore = (double) (((Algorithms * 6) * (PlatformSkill * 2.5)) * bonus);
+			finalScore = (double) ((((Algorithms * 6)+1) * ((PlatformSkill * 2.5)+1)) * bonus);
 			
 			Application.LoadLevel (2);
 		}

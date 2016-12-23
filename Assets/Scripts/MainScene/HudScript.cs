@@ -23,6 +23,7 @@ public class HudScript : MonoBehaviour {
 	void Awake () {
         RenderUI();
         PlatformEvent.dotheUpdateUI += RenderUI;
+		DontDestroyOnLoad (transform.gameObject);
 	}
 	
 	// Update is called once per frame

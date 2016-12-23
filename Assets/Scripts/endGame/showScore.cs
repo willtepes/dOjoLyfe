@@ -11,12 +11,13 @@ public class showScore : MonoBehaviour {
 	void Start () {
 		dialog = this.gameObject.GetComponentsInChildren<Text>()[0];
 		float morestuff = (float)PlayerStats.finalScore;
-		int percent = (int)Mathf.Round(morestuff / 756);
+
+		int percent = (int)Mathf.Round(morestuff / 30);
 		possibleJobs (percent);
-		dialog.text = $"Congratulations your score is {morestuff}% You can get a job at {job}";
+		dialog.text = $"Congratulations your score is {percent}% You can get a job at {job}";
 
 
-		Debug.Log (morestuff);
+
 	}
 	
 
