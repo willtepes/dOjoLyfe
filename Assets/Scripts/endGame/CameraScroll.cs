@@ -20,7 +20,7 @@ public class CameraScroll : MonoBehaviour {
 	}
 	IEnumerator ShowButtons()
 	{
-		yield return new WaitForSeconds (72);
+		yield return new WaitForSeconds (44);
 		canvas.SetActive (true);
 
 	}

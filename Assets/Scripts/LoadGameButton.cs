@@ -10,7 +10,7 @@ public class LoadGameButton : MonoBehaviour {
 	public Text dtext;
 	public int index = 0;
 	public bool nextButton =true;
-	public string[] directions = new string[]{"Welcome to the Dojo","You are about to begin you journey towards becoming and awesome Software Developer.","Your Goal is to become the best programmer and to get a job at Boogle!","You can interact with characters in the game by pressing space bar.","Have fun Harry!"};
+	public string[] directions = new string[]{"Welcome to the Dojo","You are about to begin you journey towards becoming an awesome Software Developer.","Your Goal is to become the best programmer and to get a job at Boogle!","You can interact with characters in the game by pressing space bar.","Have fun Harry!"};
 	private AudioSource source {get{return GetComponent<AudioSource>();}}
 	void Awake()
 	{

@@ -12,7 +12,7 @@ public class showScore : MonoBehaviour {
 		dialog = this.gameObject.GetComponentsInChildren<Text>()[0];
 		float morestuff = (float)PlayerStats.finalScore;
 
-		int percent = (int)Mathf.Round(morestuff / 5200);
+		int percent = (int)Mathf.Round(morestuff / 3200);
 		possibleJobs (percent);
 		dialog.text = $"Congratulations your score is {percent}% You can get a job at {job}";
 
@@ -33,19 +33,19 @@ public class showScore : MonoBehaviour {
 	{
 		
 		if (percent >= 90) {
-			job = "Google";
+			job = "Boogle";
 		} else if (percent >= 85 && percent < 90) {
 			job = "Microsoft";
 		} else if (percent >= 80 && percent < 85) {
-			job = "Facebook";
+			job = "Legbook";
 		} else if (percent >= 75 && percent < 80) {
 			job = "Coding Dojo";
 		} else if (percent >= 70 && percent < 75) {
-			job = "AirBnB";
+			job = "AirMnM";
 		} else if (percent >= 65 && percent < 70) {
-			job = "Amazon";
+			job = "Flamazon";
 		} else {
-			job = "McDonalds";
+			job = "McDerrals";
 		}
 	}
 }

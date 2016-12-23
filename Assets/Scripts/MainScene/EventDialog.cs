@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class EventDialog : MonoBehaviour {
-	public Text dialog;
+	Text dialog;
 	int someTime;
 	string somtetag;
 	protected Button yesbtn;
@@ -16,16 +16,10 @@ public class EventDialog : MonoBehaviour {
 		yesbtn.onClick.AddListener(TaskOnClick);
 		nobtn1 = this.gameObject.GetComponentsInChildren<Button>()[0];
 		nobtn1.onClick.AddListener(TaskOnClick1);
-		//dialog = this.gameObject.GetComponentsInChildren<Text>()[0];
+		dialog = this.gameObject.GetComponentsInChildren<Text>()[0];
 		gameObject.SetActive (false);
 		PlayerEvents.PlayerEvent += DisplayDialog;
-		Debug.Log (dialog);
 
-	}
-
-	void OnDestroy()
-	{
-		PlayerEvents.PlayerEvent -= DisplayDialog;
 	}
 
 	void DisplayDialog(string tag, int Time)
@@ -47,9 +41,18 @@ public class EventDialog : MonoBehaviour {
 		case "NapTimewifSal":
 			dialog.text = "Do you want to take a nap?";
 			break;
+		case "CodeReview":
+			dialog.text = "Do you want to review your code?";
+			break;
+		case "HackerRank":
+			dialog.text = "Work on algorithms online?";
+			break;
+		case "ParseStone":
+			dialog.text = "Play some ParseStone? Gotta rank up!";
+			break;
 		default:
 			break;
-		
+
 
 		}
 		gameObject.SetActive (true);
@@ -58,7 +61,7 @@ public class EventDialog : MonoBehaviour {
 
 
 	public void TaskOnClick(){
-			
+
 
 		PlayerEvents.doSomeStuff (somtetag, someTime);
 		gameObject.SetActive (false);
