@@ -21,7 +21,7 @@ public class DialogueHolder : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(canInteract == true && Input.GetKeyUp(KeyCode.Space)){
+		if(canInteract == true && Input.GetButtonUp("Submit")){
 			showDialouge();
 		}
 	}

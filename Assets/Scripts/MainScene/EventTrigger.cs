@@ -6,9 +6,12 @@ public class EventTrigger : MonoBehaviour {
 	public int time; 
 
 
-	 void OnTriggerEnter2D()
+	 void OnTriggerEnter2D(Collider2D other)
 	{
+		if(other.gameObject.tag == "Player")
+		{
+			PlayerEvents.EventsHappen(gameObject.tag, time);
+		}
 		
-		PlayerEvents.EventsHappen(gameObject.tag, time);
 	}
 }

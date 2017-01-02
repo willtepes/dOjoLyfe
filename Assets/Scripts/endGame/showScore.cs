@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class showScore : MonoBehaviour {
@@ -24,7 +25,7 @@ public class showScore : MonoBehaviour {
 	}
 
 	public void PlayAgain(){
-		Application.LoadLevel (0);
+		SceneManager.LoadScene(0);
 	}
 	public void QuitGame(){
 		Application.Quit ();
@@ -35,7 +36,7 @@ public class showScore : MonoBehaviour {
 		if (percent >= 90) {
 			job = "Boogle";
 		} else if (percent >= 85 && percent < 90) {
-			job = "Microsoft";
+			job = "Macrohard";
 		} else if (percent >= 80 && percent < 85) {
 			job = "Legbook";
 		} else if (percent >= 75 && percent < 80) {
