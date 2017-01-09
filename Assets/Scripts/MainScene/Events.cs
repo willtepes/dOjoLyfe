@@ -47,8 +47,9 @@ public class Events : MonoBehaviour {
 		PlayerStats.ChangeTime (timeUsed);
 
 	}
-	void onDestroy(){
-		PlayerEvents.shesaidYes -= SwitchCase;	
+
+	void OnDestroy(){
+	PlayerEvents.shesaidYes -= SwitchCase;	
 	}
 
 
