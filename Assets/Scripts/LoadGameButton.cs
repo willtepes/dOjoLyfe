@@ -23,7 +23,7 @@ public class LoadGameButton : MonoBehaviour {
 			Application.Quit(); // Quits the game
 		}
 		changeText ();
-		if (Input.GetKeyUp ("space")) {
+		if (Input.GetButtonUp ("Submit")) {
 			nextButton = true;
 		}
 
@@ -40,7 +40,7 @@ public class LoadGameButton : MonoBehaviour {
 	}
 	public void changeText()
 	{
-		if (nextButton == true &&Input.GetKeyDown ("space") ) {
+		if (nextButton == true && Input.GetButtonDown ("Submit") ) {
 			index += 1;
 			if (index < directions.Length) {
 				
