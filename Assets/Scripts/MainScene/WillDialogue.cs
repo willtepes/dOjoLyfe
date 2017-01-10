@@ -74,9 +74,9 @@ public class WillDialogue : MonoBehaviour {
 		yield return new WaitForSeconds(1f);
 		anim.SetTrigger("DeathTrigger");
 		
-		yield return new WaitForSeconds(1F);
+
 		source.PlayOneShot(DeathSound, 1F);
-		gameObject.transform.localScale += new Vector3(1F,1F,0);
+
 		yield return new WaitForSeconds(2.5f);
 		gameObject.SetActive(false);
 	}
