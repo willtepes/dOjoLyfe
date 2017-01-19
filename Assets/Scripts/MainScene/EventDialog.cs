@@ -12,6 +12,7 @@ public class EventDialog : MonoBehaviour {
 
 	void Awake()
 	{
+		
 		yesbtn = this.gameObject.GetComponentsInChildren<Button>()[1];
 		yesbtn.onClick.AddListener(TaskOnClick);
 		nobtn1 = this.gameObject.GetComponentsInChildren<Button>()[0];
@@ -72,6 +73,10 @@ public class EventDialog : MonoBehaviour {
 	public void TaskOnClick1(){
 		gameObject.SetActive (false);
 		PlayerMovement.canmove = true;
+	}
+	void OnDestroy()
+	{
+		PlayerEvents.PlayerEvent -= DisplayDialog;
 	}
 
 

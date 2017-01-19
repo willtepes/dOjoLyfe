@@ -26,7 +26,6 @@ public class PlayerStats : MonoBehaviour {
 		ProjectCompletion = 0;
 		TimeLeft = 100;
 		ChangeCoding();
-		DontDestroyOnLoad (transform.gameObject);
 	}
 
 	// Update is called once per frame
