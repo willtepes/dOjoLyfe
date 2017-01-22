@@ -44,7 +44,7 @@ public class LoadGameButton : MonoBehaviour {
 			index += 1;
 			if (index < directions.Length) {
 				
-				dtext.text = directions [index];
+				dtext.text = directions[index];
 
 				nextButton = false;
 
