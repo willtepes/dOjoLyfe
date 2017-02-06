@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour {
 	Rigidbody2D rBody;
 	Animator anim;
 
-	// Use this for initialization
+	// Use this for initialization - Gets rigitbody and animator from player game object and sets canmove bool to true.
 	void Awake () {
 		canmove = true;
 		rBody = GetComponent<Rigidbody2D>();
@@ -16,7 +16,9 @@ public class PlayerMovement : MonoBehaviour {
 		
 	}
 	
-	// Update is called once per frame
+	// Update is called once per frame - While canmove is true gets current movement vector from user input.  If vector is not zero sets iswalking bool to true and passes
+	// x and y inputs to animator.  If movement vector is zero sets iswalking bool to false.  Updates player position based on movement_vector. If canmove is set
+	// to false animator iswalking bool also set to false.
 	void Update () {
 		if (canmove == true) {
 

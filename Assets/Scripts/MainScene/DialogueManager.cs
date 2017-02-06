@@ -10,12 +10,12 @@ public class DialogueManager : MonoBehaviour {
 	public Text dtext;
 	public bool dialogueActive;
 
-	// Use this for initialization
+	// Dialogue box is set inactive at initialization 
 	void Start () {
 		dbox.SetActive(false);
 	}
 	
-	// Update is called once per frame
+	// Update is called once per frame - clears dialogue box if active and lets player move after submit button clicked
 	void Update () {
 		if(dialogueActive && Input.GetButtonDown("Submit"))
 		{
@@ -26,6 +26,7 @@ public class DialogueManager : MonoBehaviour {
 		}
 	}
 
+	// Freezes player in place and puts dialogue box on screen.  Sets dialogueActive bool to true so it can be cleared with Update.
 	public void ShowBox(string dialogue)
 	{
 		PlayerMovement.canmove = false;

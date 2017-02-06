@@ -26,7 +26,7 @@ public class DialogueHolder : MonoBehaviour {
 		}
 	}
 
-
+	// Sets NPC can interact Bool to true when player enters collider
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if(other.tag == "Player")
@@ -35,6 +35,7 @@ public class DialogueHolder : MonoBehaviour {
 		}
 	}
 
+	// Sets NPC can interact Bool to false when player leaves collider
 	void OnTriggerExit2D(Collider2D other)
 	{
 		if(other.tag == "Player")
@@ -43,6 +44,7 @@ public class DialogueHolder : MonoBehaviour {
 		}
 	}
 
+	// Sets which dialog will show based on time left.  Shows the dialogue box on screen and sets can interact bool to false  
 	void showDialouge(){
 		if(PlayerStats.TimeLeft > 66)
 		{

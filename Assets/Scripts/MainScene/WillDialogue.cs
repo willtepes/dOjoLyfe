@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading;
 
+// Special dialogue manager for Will NPC allowing charecter to die after third dialogue.
 public class WillDialogue : MonoBehaviour {
 
 	public string dialogue1;
@@ -29,14 +30,14 @@ public class WillDialogue : MonoBehaviour {
 		rend = GetComponent<Renderer>();
 	}
 
-	// Update is called once per frame
+	// Update is called once per frame - shows dialogue box on screen if Player close enough to NPC and clicks submit
 	void Update () {
 		if(canInteract == true && Input.GetButtonUp("Submit")){
 			showDialouge();
 		}
 	}
 
-
+	// canInteract set to true when player enters collider
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if(other.tag == "Player")
@@ -45,6 +46,7 @@ public class WillDialogue : MonoBehaviour {
 		}
 	}
 
+	// caninteract set to false when player leaves collider
 	void OnTriggerExit2D(Collider2D other)
 	{
 		if(other.tag == "Player")
@@ -53,6 +55,7 @@ public class WillDialogue : MonoBehaviour {
 		}
 	}
 
+	// Sets dialogue on dialogue box based on game time left.  Runs Death coroutine after 3rd dialogue option shown.
 	void showDialouge(){
 		if(PlayerStats.TimeLeft > 66)
 		{
@@ -69,6 +72,7 @@ public class WillDialogue : MonoBehaviour {
 		canInteract = false;
 	}
 
+	// Runs death animation and plays Deathsound.  Once animation completes Will gameobject is set to inactive.
 	IEnumerator Death()
 	{
 		yield return new WaitForSeconds(1f);
